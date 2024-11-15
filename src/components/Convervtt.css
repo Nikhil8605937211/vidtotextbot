@@ -1,0 +1,136 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+}
+
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px; /* Increase padding for more space */
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 90%; /* Set the width to 90% of the parent container */
+    max-width: 600px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.converter-title {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #007bff; /* Highlight color */
+    margin-bottom: 10px;
+}
+
+.converter-subtitle {
+    font-size: 1.1rem;
+    color: #555; /* Darker grey for subtitle */
+    margin-bottom: 30px; /* Space below subtitle */
+    text-align: center; /* Center align the subtitle */
+}
+
+.upload-section {
+    width: 100%; /* Full width for the upload section */
+    margin-bottom: 30px; /* Space below upload section */
+}
+
+.input-group {
+    display: flex; /* Flexbox for horizontal layout */
+    align-items: center; /* Center items vertically */
+}
+
+.input-group .form-control {
+    border-radius: 0.375rem; /* Rounded corners */
+    border: 1px solid #007bff; /* Blue border */
+    flex: 1; /* Allow the input field to grow */
+}
+
+.btn {
+    min-width: 100px; /* Set a minimum width for buttons */
+}
+
+.query-section {
+    width: 100%; /* Full width for query section */
+    margin-top: 20px; /* Space above query section */
+}
+
+.query-submit {
+    margin-left: 10px; /* Space between input and button */
+    background-color: #17a2b8; /* Info button color */
+    border-radius: 0.375rem; /* Rounded corners */
+}
+
+.query-submit:hover {
+    background-color: #138496; /* Darker on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .converter-container {
+        padding: 20px; /* Reduce padding on small screens */
+    }
+
+    .converter-title {
+        font-size: 1.5rem; /* Smaller title font on small screens */
+    }
+
+    .converter-subtitle {
+        font-size: 1rem; /* Smaller subtitle font on small screens */
+    }
+
+    .input-group .form-control {
+        min-width: 0; /* Allow input to fill available space */
+    }
+
+    .btn {
+        min-width: 80px; /* Smaller minimum width for buttons on mobile */
+    }
+}
+
+
+.message {
+    margin-top: 20px;
+    color: red; /* Or any other color */
+  }
+
+
+ .loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logo-container {
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 150px; /* Adjust size of logo */
+  height: auto;
+}
+
+.progress-bar-container {
+  width: 80%; /* You can adjust the width of the progress bar */
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #36d7b7; /* Progress bar color */
+  border-radius: 10px;
+  text-align: center;
+  line-height: 20px; /* Vertically center the text */
+  color: white;
+}
+
+.progress-text {
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: #ccc;
+}

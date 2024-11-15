@@ -1,0 +1,104 @@
+/* Home.css */
+
+body {
+    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full height of the viewport */
+    padding: 20px; /* Padding for smaller devices */
+    position: relative;
+    background-color: #ffffff; /* Set background color to white */
+    color: #333; /* Dark text color for better contrast */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.quote-container {
+    max-width: 800px; /* Max width for quotes */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding for quotes */
+    margin-top: -80px; /* Adjusted margin to reduce space */
+}
+
+.quote-container h3 {
+    font-size: 2.2rem; /* Font size for quotes */
+    margin-bottom: 10px; /* Space below quote */
+    color: #007bff; /* Highlight color for the quote */
+    font-weight: bold;
+}
+
+.quote-container p {
+    font-size: 1.25rem; /* Font size for paragraph */
+    margin: 5px 0; /* Vertical margin for paragraphs */
+    color: #000000; /* Text color */
+    font-weight: bold;
+}
+
+.start-button {
+    margin-top: 10px; /* Space above button */
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.35rem; /* Font size for button */
+    background-color: #0056b3; /* Bootstrap primary color */
+    border-radius: 25px; /* Rounded corners */
+    color: white; /* White text color for the button */
+    cursor: pointer; /* Pointer cursor for button */
+    font-weight: bold;
+}
+
+.start-button:hover {
+    background-color: #007bff; /* Darker on hover */
+    font-weight: bold;
+}
+
+#vid {
+    color: red;
+    font-weight: bolder;
+}
+
+/* Positioning and making the robot image responsive */
+.robot-image {
+    position: absolute;
+    bottom: 0px; /* Align to the bottom */
+    right: 0px; /* Align to the right */
+    width: 650px; /* Set a specific width for the image */
+    height: 600px; /* Maintain aspect ratio */
+}
+
+.demo-image {
+    display: none; /* Hide demo image by default */
+    animation: moveUpDown 3s ease-in-out infinite; /* 3s for duration, infinite for continuous looping */
+}
+
+@media (max-width: 768px) {
+    .robot-image {
+        display: none; /* Hide robot image on mobile devices */
+    }
+
+    .demo-image {
+        display: block; /* Show demo image on mobile devices */
+        position: relative; /* Change to relative positioning */
+        bottom: 0px; /* Adjust position for better alignment */
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 0px; /* Adjusted margin below the image */
+        margin-top: -140px; /* Adjusted margin to reduce upper space */
+    }
+
+    .quote-container {
+        margin-top: 10px; /* Reduced margin to the top of the quote container */
+    }
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Adjust this value for the desired movement */
+    }
+}

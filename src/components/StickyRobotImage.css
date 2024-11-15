@@ -1,0 +1,26 @@
+/* StickyRobotImage.css */
+
+/* Container for the sticky robot image */
+.sticky-robot-container {
+    position: fixed; /* Fixed positioning */
+    bottom: 0px; /* Adjust as needed */
+    right: 0px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Positioning and making the robot image responsive */
+.robot-image {
+    width: 650px; /* Set a specific width for the image */
+    height: 600px; /* Maintain aspect ratio */
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    .robot-image {
+        position:absolute; /* Change position to relative */
+        width: 100%; /* Full width */
+        height: 440px; /* Auto height to maintain aspect ratio */
+        /* Reduce opacity for mobile view */
+        margin-bottom: -15px; /* Space below the image */
+    }
+}

@@ -1,0 +1,131 @@
+/* General Reset */
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Font Family */
+body {
+    font-family: 'Roboto', sans-serif; /* Ensure Roboto is applied to the entire body */
+}
+
+/* Hero Section Styles */
+.HeroSection_hero__AeCxZ {
+    display: flex;
+    flex-direction: column; /* Stack content on smaller screens */
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    overflow: hidden;
+    padding: 4rem 2rem; /* Padding for space */
+    text-align: center; /* Center text */
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.HeroSection_hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* Space items evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 5rem; /* Space between items */
+    width: 100%; /* Full width for the container */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Text Styles */
+.HeroSection_texts {
+    flex: 1; /* Allow flex to take up available space */
+    padding: 20px; /* Padding for text container */
+}
+
+.HeroSection_texts h1 {
+    font-size: 2.5rem; /* Size for heading */
+    color: #020303; /* Highlight color */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.HeroSection_texts p {
+    font-size: 1.1rem; /* Font size for paragraph */
+    color: #555; /* Darker grey for text */
+    margin: 20px 0; /* Space above and below */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.HeroSection_buttons {
+    background-color: transparent; /* Make background transparent */
+    color: #007bff; /* Text color */
+    border: 2px solid #007bff; /* Blue border */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s ease; /* Transition for hover effects */
+    font-size: 1rem; /* Font size for the button text */
+    font-weight: bold; /* Bold text */
+}
+
+.HeroSection_buttons:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* White text on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Subtle shadow on hover */
+}
+
+.HeroSection_image-container {
+    /* Optional: center the image within its container */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+}
+
+.move-up-down {
+    animation: moveUpDown 2s ease-in-out infinite; /* Animation effect */
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0); /* Original position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up by 10 pixels */
+    }
+    100% {
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .HeroSection_hero-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        gap: 2rem; /* Reduce gap between items */
+    }
+
+    .HeroSection_texts h1 {
+        font-size: 2rem; /* Smaller heading on mobile */
+    }
+
+    .HeroSection_texts p {
+        font-size: 1rem; /* Smaller paragraph text on mobile */
+    }
+}
+
+.HeroSection_gradient-span{
+    color: rgb(225, 44, 44);
+}
+/* About.css */
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Optional: Adds a slight upward movement */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-in forwards; /* Adjust duration and easing as needed */
+  }
+  

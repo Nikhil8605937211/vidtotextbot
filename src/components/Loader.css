@@ -1,0 +1,109 @@
+/* Loader container styling */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full screen height */
+
+    text-align: center;
+  }
+  
+  /* Logo container styling */
+  .logo-container {
+    margin-bottom: 5px; /* Space between logo and animation */
+  }
+  
+  .logo {
+    width: 250px; /* Increase the size of the logo */
+    height: auto;
+    object-fit: contain;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation for logo */
+    animation: bounce 2s infinite; 
+  }
+  
+  /* Animation effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+/* Continuous Up-Down Animation */
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-12px);
+    }
+    60% {
+        transform: translateY(-8px);
+    }
+}
+
+  
+  /* Progress bar container with the loading animation */
+  .progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  
+  l-dot-wave {
+    margin-top: 20px;
+    width: 80px; /* Make the loading animation bigger */
+    height: 80px;
+  }
+  
+  /* Loading text styling */
+  .progress-bar-container p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555; /* Slightly darker text color */
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Success message styling */
+  .success-message {
+    color: #2ecc71;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media screen and (max-width: 600px) {
+    .logo {
+      width: 120px; /* Adjust logo size on smaller screens */
+    }
+  
+    l-dot-wave {
+      width: 60px; /* Adjust loading animation size on smaller screens */
+      height: 60px;
+    }
+  
+    .progress-bar-container p {
+      font-size: 16px; /* Smaller text for mobile */
+    }
+  }
+  .error-message {
+    color: black; /* Set the error message text color to black */
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
