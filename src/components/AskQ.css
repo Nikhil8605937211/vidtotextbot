@@ -3,7 +3,8 @@ body {
 }
 
 .chat-container {
-    max-width: 600px; /* Max width for the chat container */
+    max-width: 800px; /* Max width for the chat container */
+
     margin: 0 auto; /* Center horizontally */
     padding: 20px; /* Padding for container */
     background-color: #ffffff; /* Background color */
@@ -15,6 +16,7 @@ body {
     border: 1px solid #ccc; /* Border for the chat window */
     border-radius: 8px; /* Rounded corners */
     overflow-y: auto; /* Scrollable */
+  
     max-height: 400px; /* Max height for chat window */
     height: 300px;
     padding: 10px; /* Padding inside the chat window */
@@ -98,4 +100,28 @@ body {
     font-family: 'Georgia', 'Times New Roman', Times, serif; /* Use a serif font */
     border-bottom: 2px solid #ddd; /* Add a bottom border for emphasis */
     padding-bottom: 10px; /* Add some padding below the text */
+}
+
+
+
+/* Bot image styling */
+.bot-image {
+    position: absolute;
+    left: 230px;
+    top: 35%;
+    transform: translateY(-50%);
+    z-index: 10; /* Make sure the bot image is above the messages */
+  }
+  
+  .bot-image img {
+    width: 200px; /* Adjust size of the bot image */
+    height: auto;
+  }
+
+
+/* Make the bot image responsive */
+@media (max-width: 1200px) {
+    .bot-image {
+    display: none;
+    }
 }

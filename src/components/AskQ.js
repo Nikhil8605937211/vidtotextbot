@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MdSend } from 'react-icons/md'; // Import the send icon only
 import axios from 'axios'; // Import axios for API requests
 import './AskQ.css'; // Import CSS for styling
+import chatbot from "../assests/chat-page-bot.png";
 
 const AskQ = () => {
   const [question, setQuestion] = useState('');
@@ -73,9 +74,13 @@ const AskQ = () => {
               {msg.text}
             </div>
           ))}
-          {loading && <div className="message bot">VidtextBot is typing...</div>} {/* Show typing indicator */}
+          {loading && <div className="message bot">
+VidtextBot is typing...</div>} {/* Show typing indicator */}
           <div ref={messagesEndRef} /> {/* Scroll reference */}
         </div>
+        <div className="bot-image">
+      <img src={chatbot} alt="Chatbot" className="img-fluid" />
+    </div>
       </div>
 
       <div className="input-container">
