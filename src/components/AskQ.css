@@ -4,19 +4,25 @@ body {
 
 .chat-container {
     max-width: 800px; /* Max width for the chat container */
-
     margin: 0 auto; /* Center horizontally */
     padding: 20px; /* Padding for container */
     background-color: #ffffff; /* Background color */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
 }
-
+#headQue {
+    font-size: 28px; /* Adjust the font size */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center align the text */
+    margin-bottom: 15px; /* Space below the heading */
+    font-family: 'Georgia', 'Times New Roman', Times, serif; /* Use a serif font */
+    border-bottom: 2px solid #ddd; /* Add a bottom border for emphasis */
+    padding-bottom: 10px; /* Add some padding below the text */
+}
 .chat-window {
     border: 1px solid #ccc; /* Border for the chat window */
     border-radius: 8px; /* Rounded corners */
     overflow-y: auto; /* Scrollable */
-  
     max-height: 400px; /* Max height for chat window */
     height: 300px;
     padding: 10px; /* Padding inside the chat window */
@@ -34,19 +40,56 @@ body {
     border-radius: 5px; /* Rounded corners for message */
     border: 1px solid #000000; /* Add border to messages */
 }
-
+/* User message styles */
 .message.user {
-    background-color: #ffffff; /* Light green for user messages */
+    background-color: #e3f9e5; /* Soft pastel green for user messages */
     align-self: flex-end; /* Align user messages to the right */
-    color: black;
+    color: #2e2e2e; /* Dark gray text for better contrast */
+    display: flex; /* Use flexbox to align icon and text */
+    justify-content: flex-start; /* Align items to the left side of the container */
+    align-items: center; /* Vertically center the icon and text */
+    font-family: 'Arial', sans-serif; /* Modern font for user messages */
+    padding: 8px 12px; /* Padding around text */
+    border-radius: 12px; /* Rounded corners */
 }
 
+.message.user .icon {
+    color: #4CAF50; /* Green color for user icon */
+    margin-right: 12px; /* Space between the icon and the text */
+    font-size: 18px; /* Adjust icon size */
+}
+
+.message.user .text {
+    font-weight: 500; /* Slightly bolder text for user input */
+    font-size: 16px; /* Adjust font size for readability */
+    line-height: 1.5; /* Line spacing for better readability */
+}
+
+/* Bot message styles */
 .message.bot {
-    background-color: #e2e2e2; /* Light blue for bot messages */
+    background-color: #f2f6ff; /* Light, soft blue for bot messages */
     align-self: flex-start; /* Align bot messages to the left */
-    color: black
+    color: #2e2e2e; /* Dark gray text for bot messages */
+    display: flex; /* Flex layout for icon and text */
+    align-items: center; /* Vertically center icon and text */
+    font-family: 'Arial', sans-serif; /* Modern font for bot messages */
+    padding: 8px 12px; /* Padding around text */
+    border-radius: 12px; /* Rounded corners */
 }
 
+.message.bot .icon {
+    color: #2196F3; /* Blue color for bot icon */
+    margin-right: 12px; /* Space between the icon and the text */
+    font-size: 18px; /* Adjust icon size */
+}
+
+.message.bot .text {
+    font-weight: 400; /* Regular text weight for bot response */
+    font-size: 16px; /* Adjust font size for readability */
+    line-height: 1.5; /* Line spacing for better readability */
+}
+
+/* Input container styles */
 .input-container {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
@@ -78,32 +121,6 @@ body {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-.edit-button {
-    background-color: transparent; /* Transparent background */
-    border: none; /* Remove border */
-    color: #007bff; /* Blue text */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-left: 10px; /* Space between message and button */
-    font-size: 16px; /* Font size */
-    transition: color 0.3s; /* Smooth color transition */
-}
-
-.edit-button:hover {
-    color: #000000; /* Darker blue on hover */
-}
-
-#headQue {
-    font-size: 28px; /* Adjust the font size */
-    color: #333; /* Dark text color */
-    text-align: center; /* Center align the text */
-    margin-bottom: 15px; /* Space below the heading */
-    font-family: 'Georgia', 'Times New Roman', Times, serif; /* Use a serif font */
-    border-bottom: 2px solid #ddd; /* Add a bottom border for emphasis */
-    padding-bottom: 10px; /* Add some padding below the text */
-}
-
-
-
 /* Bot image styling */
 .bot-image {
     position: absolute;
@@ -111,17 +128,16 @@ body {
     top: 35%;
     transform: translateY(-50%);
     z-index: 10; /* Make sure the bot image is above the messages */
-  }
-  
-  .bot-image img {
+}
+
+.bot-image img {
     width: 200px; /* Adjust size of the bot image */
     height: auto;
-  }
-
+}
 
 /* Make the bot image responsive */
 @media (max-width: 1200px) {
     .bot-image {
-    display: none;
+        display: none;
     }
 }

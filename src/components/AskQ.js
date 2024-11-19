@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MdSend } from 'react-icons/md'; // Import the send icon only
-import axios from 'axios'; // Import axios for API requests
-import './AskQ.css'; // Import CSS for styling
-import chatbot from "../assests/chat-page-bot.png";
+import { MdSend } from 'react-icons/md'; // Send icon
+import { FaUserAlt, FaRobot } from 'react-icons/fa'; // User and Bot icons
+import axios from 'axios';
+import './AskQ.css';
+import chatbot from '../assests/chat-page-bot.png';
 
 const AskQ = () => {
   const [question, setQuestion] = useState('');
   const [messages, setMessages] = useState([]);
-  const [loading, setLoading] = useState(false); // To manage loading state while waiting for the bot response
+  const [loading, setLoading] = useState(false); // Manage loading state
 
   // Retrieve the video ID (vid) from localStorage
   const vid = localStorage.getItem('vid');
@@ -71,16 +72,18 @@ const AskQ = () => {
         <div className="messages">
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
-              {msg.text}
+              <span className="icon">
+                {msg.sender === 'user' ? <FaUserAlt /> : <FaRobot />}
+              </span>
+              <span className="text">{msg.text}</span>
             </div>
           ))}
-          {loading && <div className="message bot">
-VidtextBot is typing...</div>} {/* Show typing indicator */}
+          {loading && <div className="message bot">VidtextBot is typing...</div>} {/* Show typing indicator */}
           <div ref={messagesEndRef} /> {/* Scroll reference */}
         </div>
         <div className="bot-image">
-      <img src={chatbot} alt="Chatbot" className="img-fluid" />
-    </div>
+          <img src={chatbot} alt="Chatbot" className="img-fluid" />
+        </div>
       </div>
 
       <div className="input-container">

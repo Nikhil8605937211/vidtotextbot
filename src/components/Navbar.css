@@ -9,8 +9,8 @@ body {
 
 /* Navigation bar styling */
 .navd {
-    background-color: #ffffff; 
-    border: 1px solid #333333; 
+    background-color: #fafafa; /* Light grey background */
+    border: 1px solid #cccccc; /* Light grey border */
     font-weight: 500; 
     font-size: 18px; /* Font size is good */
     font-family: Georgia, 'Times New Roman', Times, serif; /* Use preferred font */
@@ -21,18 +21,38 @@ body {
 .navitem {
     text-decoration: none;
     color: #333333; /* Dark text */
-    font-weight: bold; /* Change font weight to bold */
+    font-weight: bold; /* Bold font */
     padding: 10px 20px; /* Add padding for better touch targets */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions including transform */
+    cursor: pointer; /* Pointer cursor on hover */
+    position: relative; /* For underline effect */
 }
 
 /* Hover and active states for navigation items */
 .navitem:hover,
 .navitem:active {
-    background-color: #989292; /* Blackish background */
-    color: #ffffff; /* White text */
-    border-radius: 40px; /* Rounded corners */
+    background-color: #d3d3d3; /* Light grey background on hover */
+    color: #333333; /* Dark text */
+    border-radius: 20px; /* Rounded corners */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Underline effect for navitem */
+.navitem::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Thickness of underline */
+    background-color: #ff5733; /* Highlight color */
+    bottom: -5px; /* Position below the text */
+    left: 0;
+    transform: scaleX(0); /* Start with 0 scale */
+    transition: transform 0.3s ease; /* Transition effect */
+}
+
+/* Underline expands on hover */
+.navitem:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
 }
 
 /* Navigation container */
@@ -114,4 +134,3 @@ body {
     left: 165px; /* Adjust as needed */
     bottom: px;
 }
-

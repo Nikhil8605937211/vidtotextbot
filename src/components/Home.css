@@ -1,4 +1,5 @@
-/* Home.css */
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
     font-family: 'Roboto', sans-serif; /* Apply Roboto font */
@@ -12,7 +13,7 @@ body {
     min-height: 100vh; /* Full height of the viewport */
     padding: 20px; /* Padding for smaller devices */
     position: relative;
-    background-color: #ffffff; /* Set background color to white */
+    background-color: #f9f9f9; /* Light background color */
     color: #333; /* Dark text color for better contrast */
     overflow: hidden; /* Prevent content overflow */
 }
@@ -21,7 +22,8 @@ body {
     max-width: 800px; /* Max width for quotes */
     text-align: center; /* Center text */
     padding: 20px; /* Padding for quotes */
-    margin-top: -80px; /* Adjusted margin to reduce space */
+    margin-top: -60px; /* Adjusted margin to reduce space */
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font for quotes */
 }
 
 .quote-container h3 {
@@ -34,25 +36,24 @@ body {
 .quote-container p {
     font-size: 1.25rem; /* Font size for paragraph */
     margin: 5px 0; /* Vertical margin for paragraphs */
-    color: #000000; /* Text color */
-    font-weight: bold;
+    color: #555; /* Slightly lighter text color */
+    font-weight: normal;
 }
 
 .start-button {
     margin-top: 10px; /* Space above button */
-    padding-left: 50px;
-    padding-right: 50px;
-    font-size: 1.35rem; /* Font size for button */
+    padding: 10px 30px; /* Padding for button */
+    font-size: 1.25rem; /* Font size for button */
     background-color: #0056b3; /* Bootstrap primary color */
-    border-radius: 25px; /* Rounded corners */
+    border-radius: 30px; /* Rounded corners */
     color: white; /* White text color for the button */
     cursor: pointer; /* Pointer cursor for button */
     font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 .start-button:hover {
     background-color: #007bff; /* Darker on hover */
-    font-weight: bold;
 }
 
 #vid {
@@ -66,7 +67,7 @@ body {
     bottom: 0px; /* Align to the bottom */
     right: 0px; /* Align to the right */
     width: 650px; /* Set a specific width for the image */
-    height: 600px; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .demo-image {

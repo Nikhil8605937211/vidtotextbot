@@ -7,11 +7,30 @@ function Convervtt() {
   const [videoTitle, setVideoTitle] = useState('');
   const [url, setUrl] = useState('');
   const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+
+  // Validate form inputs
+  const validate = () => {
+    const errors = {};
+    if (!url) {
+      errors.url = 'YouTube link is required';
+    } 
+    if (!videoTitle) {
+      errors.videoTitle = 'Video title is required';
+    }
+    return errors;
+  };
 
   // Handle the API request and simulate loading progress
   const handleSubmit = async () => {
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
     setMessage(''); // Reset the message
+    setErrors({}); // Clear previous errors
     navigate('/loader', { state: { isLoading: true, error: '' } }); // Navigate to loader page with loading state
 
     try {
@@ -59,11 +78,13 @@ function Convervtt() {
               placeholder="Upload YouTube link"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
+              required
             />
             <button className="btn btn-primary">
-              Paste
+              Url
             </button>
           </div>
+          {errors.url && <p className="text-danger">{errors.url}</p>}
         </div>
 
         <div className="col-12 mb-3">
@@ -74,11 +95,13 @@ function Convervtt() {
               placeholder="Your Video title here"
               value={videoTitle}
               onChange={(e) => setVideoTitle(e.target.value)}
+              required
             />
             <button className="btn btn-success" onClick={handleSubmit}>
               Title
             </button>
           </div>
+          {errors.videoTitle && <p className="text-danger">{errors.videoTitle}</p>}
         </div>
       </div>
 

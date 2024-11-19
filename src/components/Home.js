@@ -4,7 +4,6 @@ import { Container, Row, Col, Button } from 'react-bootstrap'; // Import Bootstr
 import robotImage from '../assests/robot.png'; // Import your robot image
 import demoImage from '../assests/mobileRo.png'; // Import your demo image
 import About from './About'; // Adjust path as necessary
-import AskQ from './AskQ'; // Adjust path as necessary
 import Convervtt from './Convervtt'; // Adjust path as necessary
 import Typewriter from 'typewriter-effect';
 import { Link } from 'react-router-dom'; // Import Link for routing
@@ -57,8 +56,7 @@ function Home() {
             </Container>
 
             <About />
-            <Convervtt />
-        
+            {/* <Convervtt /> */}
         </>
     );
 }

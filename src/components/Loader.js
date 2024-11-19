@@ -17,7 +17,7 @@ const Loader = () => {
         // If there was an error, navigate back to the convert page with previous URL and videoTitle
         setTimeout(() => {
           navigate('/convert', { state: { url, videoTitle } }); // Pass URL and title back to the convert page
-        }, 2510); // Delay the redirection to show the error message
+        }, 2010); // Delay the redirection to show the error message
       } else if (vid) {
         // If there's no error and vid exists (i.e., data fetched successfully), navigate to the /ask page
         setTimeout(() => {
