@@ -9,6 +9,7 @@ const AskQ = () => {
   const [question, setQuestion] = useState('');
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false); // Manage loading state
+  const defaultMessageSentRef = useRef(false); // Ref to track if the default message is sent
 
   // Retrieve the video ID (vid) from localStorage
   const vid = localStorage.getItem('vid');
@@ -20,10 +21,10 @@ const AskQ = () => {
     setQuestion(e.target.value);
   };
 
-  const handleSubmit = async () => {
-    if (question.trim() !== '') {
+  const handleSubmit = async (inputQuestion) => {
+    if (inputQuestion.trim() !== '') {
       // Add a new user message
-      setMessages([...messages, { text: question, sender: 'user' }]);
+      setMessages((prevMessages) => [...prevMessages, { text: inputQuestion, sender: 'user' }]);
       setQuestion(''); // Clear the input field
       setLoading(true); // Set loading state to true
 
@@ -31,7 +32,7 @@ const AskQ = () => {
         // Prepare form-data
         const formData = new FormData();
         formData.append('vid', vid);
-        formData.append('user_input', question);
+        formData.append('user_input', inputQuestion);
 
         // Make the API call to generate the response from the bot
         const generated_res = await axios.post('https://relaxing-safely-leech.ngrok-free.app/generate_response', formData, {
@@ -58,6 +59,15 @@ const AskQ = () => {
       }
     }
   };
+
+  // Initialize with a default message on component mount
+  useEffect(() => {
+    if (!defaultMessageSentRef.current) {
+      const defaultQuestion = 'Video Summary';
+      handleSubmit(defaultQuestion);
+      defaultMessageSentRef.current = true; // Mark the default message as sent
+    }
+  }, []); // Empty dependency array to run only on mount
 
   // Scroll to the bottom of the chat window whenever messages are updated
   useEffect(() => {
@@ -94,7 +104,7 @@ const AskQ = () => {
           onChange={handleInputChange}
           rows="3"
         />
-        <button className="send-button" onClick={handleSubmit} disabled={loading}>
+        <button className="send-button" onClick={() => handleSubmit(question)} disabled={loading}>
           <MdSend />
         </button>
       </div>
