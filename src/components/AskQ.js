@@ -9,6 +9,7 @@ const AskQ = () => {
   const [question, setQuestion] = useState('');
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false); // Manage loading state
+  const [apiResponse, setApiResponse] = useState(null); // State to store GET response
   const defaultMessageSentRef = useRef(false); // Ref to track if the default message is sent
 
   // Retrieve the video ID (vid) from localStorage
@@ -60,6 +61,18 @@ const AskQ = () => {
     }
   };
 
+  // Function to handle GET API call
+  const handleGetApiCall = async () => {
+    try {
+      const response = await axios.get(`https://relaxing-safely-leech.ngrok-free.app/get_data/${vid}`);
+      setApiResponse(response.data); // Update state with the GET API response
+      alert('GET API Response: ' + JSON.stringify(response.data)); // Show response as an alert for testing
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      alert('Error fetching data. Please try again.');
+    }
+  };
+
   // Initialize with a default message on component mount
   useEffect(() => {
     if (!defaultMessageSentRef.current) {
@@ -81,7 +94,7 @@ const AskQ = () => {
       <div className="chat-window">
         <div className="messages">
           {messages.map((msg, index) => (
-            <div key={index} className={message ${msg.sender}}>
+            <div key={index} className={`message ${msg.sender}`}>
               <span className="icon">
                 {msg.sender === 'user' ? <FaUserAlt /> : <FaRobot />}
               </span>
@@ -106,6 +119,13 @@ const AskQ = () => {
         />
         <button className="send-button" onClick={() => handleSubmit(question)} disabled={loading}>
           <MdSend />
+        </button>
+      </div>
+
+      {/* Add GET API call button */}
+      <div className="get-api-button-container">
+        <button className="get-api-button" onClick={handleGetApiCall}>
+          Fetch Data
         </button>
       </div>
     </div>
