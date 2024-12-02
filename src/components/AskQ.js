@@ -62,15 +62,18 @@ const AskQ = () => {
   };
 
   // Function to handle GET API call
-  const handleGetApiCall = async () => {
+ const handleGetApiCall = () => {
   try {
-    const newPageUrl = 'https://relaxing-safely-leech.ngrok-free.app/get_video_notes_p/${vid}`;
-    window.open(newPageUrl, '_blank'); // Open in a new tab
+    // Open the API URL directly in a new tab
+    const apiUrl = `https://relaxing-safely-leech.ngrok-free.app/get_video_notes_p/${vid}`;
+    window.open(apiUrl, '_blank'); // Open the API endpoint in a new tab
   } catch (error) {
-    console.error('Error fetching data:', error);
-    alert('Error fetching data. Please try again.');
+    console.error('Error opening the API URL:', error);
+    alert('Error opening the API. Please try again.');
   }
 };
+
+
 
   // Initialize with a default message on component mount
   useEffect(() => {
