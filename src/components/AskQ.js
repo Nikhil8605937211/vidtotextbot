@@ -64,8 +64,10 @@ const AskQ = () => {
   // Function to handle GET API call
  const handleGetApiCall = async () => {
   try {
+    alert("1");
     const response = await axios.get(`https://relaxing-safely-leech.ngrok-free.app/get_video_notes_p/${vid}`);
     setApiResponse(response.data); // Update state with the GET API response
+    alert("2");
   } catch (error) {
     console.error('Error fetching data:', error);
     alert('Error fetching data. Please try again.');
