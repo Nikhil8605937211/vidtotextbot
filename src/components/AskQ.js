@@ -62,17 +62,16 @@ const AskQ = () => {
   };
 
   // Function to handle GET API call
- const handleGetApiCall = async () => {
+ const handleGetApiCall = () => {
   try {
-    alert("1");
-    const response = await axios.get(`https://relaxing-safely-leech.ngrok-free.app/get_video_notes_p/${vid}`);
-    setApiResponse(response.data); // Update state with the GET API response
-    alert("2");
+    const apiUrl = `https://relaxing-safely-leech.ngrok-free.app/get_video_notes_p/${vid}`;
+    window.open(apiUrl, '_blank'); // Open the API endpoint in a new tab
   } catch (error) {
-    console.error('Error fetching data:', error);
-    alert('Error fetching data. Please try again.');
+    console.error('Error opening the API URL:', error);
+    alert('Error opening the API. Please try again.');
   }
 };
+
 
 
 
