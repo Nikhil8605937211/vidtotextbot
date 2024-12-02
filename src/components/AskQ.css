@@ -141,3 +141,21 @@ body {
         display: none;
     }
 }
+.get-api-button-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.get-api-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.get-api-button:hover {
+  background-color: #0056b3;
+}
