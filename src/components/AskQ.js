@@ -127,7 +127,7 @@ const AskQ = () => {
       {/* Add GET API call button */}
       <div className="get-api-button-container">
         <button className="get-api-button" onClick={handleGetApiCall}>
-          Fetch Data
+          Generate notes for the video
         </button>
       </div>
     </div>
